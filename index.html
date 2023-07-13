@@ -1,0 +1,133 @@
+ <!DOCTYPE html>
+<html>
+<head>
+  <title>Dictadura para Patos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <style>
+    .active {
+      background-color: yellow;
+    }
+    .menu {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .menu-item {
+      margin-bottom: 10px;
+    }
+    .content {
+      text-align: center;
+    }
+    #inicio-heading {
+      text-align: center;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 20px;
+      font-size: 14px;
+      color: gray;
+    }
+    .pyramid-button {
+      background-color: yellow;
+      border: none;
+      color: black;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      margin: 4px 2px;
+      cursor: pointer;
+      transform: skew(-20deg);
+    }
+  </style>
+</head>
+<body>
+  <div class="w3-container w3-black">
+    <h1 onmouseover="playSound()">Dictadura para Patos</h1>
+  </div>
+
+  <div class="w3-row">
+    <div class="w3-col m2">
+      <div class="menu">
+        <a href="#" class="w3-bar-item w3-button menu-item" onclick="showText('inicio-text')">Inicio</a>
+        <a href="#" class="w3-bar-item w3-button menu-item" onclick="showText('videos-text')">Videos</a>
+        <a href="#" class="w3-bar-item w3-button menu-item" onclick="showText('contactos-text')">Contactos</a>
+        <a href="#" class="w3-bar-item w3-button menu-item" onclick="showText('galeria-text')">Galería</a>
+        <!-- Agrega aquí más pestañas según tus necesidades -->
+      </div>
+    </div>
+    <div class="w3-col m10">
+      <div class="content">
+        <h2 id="inicio-heading">Dictadura para Patos</h2>
+        <p id="inicio-text" class="text" style="display: none;">
+          Bienvenidos a la maravillosa historia de MacPato Telolista, el pato más intrépido y alegre de todos los tiempos. Con su carisma y liderazgo, MacPato Telolista se convirtió en el líder de la Dictadura para Patos, un reino gobernado por estas encantadoras aves acuáticas. Descubre cómo MacPato Telolista transformó la vida de todos los patos, llevándolos a un nuevo nivel de diversión y felicidad.
+        </p>
+
+        <p id="videos-text" class="text" style="display: none;">
+          Explora nuestra increíble colección de videos sobre la Dictadura para Patos y el fascinante mundo de estas aves. Desde divertidos bailes hasta impresionantes acrobacias acuáticas, encontrarás una variedad de contenido emocionante que te hará reír y asombrarte. ¡Sumérgete en el maravilloso universo de los patos y déjate llevar por la alegría y la magia de la Dictadura para Patos!
+        </p>
+
+        <p id="contactos-text" class="text" style="display: none;">
+          ¡Queremos estar en contacto contigo! Si tienes alguna pregunta, sugerencia o simplemente quieres compartir tu amor por los patos, no dudes en contactarnos. Puedes encontrarnos en las siguientes direcciones y redes sociales para obtener más información, compartir tus ideas o simplemente saludar. ¡Estamos ansiosos por escucharte y hacer de la experiencia de la Dictadura para Patos algo aún más increíble!
+        </p>
+
+        <p id="galeria-text" class="text" style="display: none;">
+          Explora nuestra increíble galería de imágenes y descubre la belleza y el encanto de los patos en su máximo esplendor. Desde majestuosos cisnes hasta coloridos patos mandarines, encontrarás una variedad de fotografías impresionantes que capturan la magia de estas aves acuáticas. ¡Sumérgete en nuestro álbum de fotos y déjate cautivar por la maravillosa diversidad de los patos!
+        </p>
+
+        <!-- Agrega aquí más contenido según tus necesidades -->
+
+      </div>
+    </div>
+  </div>
+
+  <div class="w3-container">
+    <audio id="audio-player" src="https://storage.googleapis.com/mayk-audio-engine/d0fd6ebd1160b346a34b324e0daadebc/output.mp3"></audio>
+  </div>
+
+  <div class="w3-container">
+    <iframe width="420" height="315" src="https://www.youtube.com/embed/pJK6ERis_Qg?autoplay=1&mute=1"></iframe>
+  </div>
+
+  <div class="footer">
+    <p id="marco-legal">Marco Legal | Diseñado por Hector</p>
+  </div>
+
+  <div class="w3-container" style="text-align: center; margin-top: 20px;">
+    <button onclick="playAudio()" class="pyramid-button">Play</button>
+  </div>
+
+  <script>
+    var previousScrollY = 0;
+
+    function showText(elementId) {
+      var paragraphs = document.getElementsByClassName("text");
+      for (var i = 0; i < paragraphs.length; i++) {
+        paragraphs[i].style.display = "none";
+      }
+      document.getElementById(elementId).style.display = "block";
+    }
+
+    function playSound() {
+      var audio = new Audio("duck_sound.mp3");
+      audio.play();
+    }
+
+    function playAudio() {
+      var audio = document.getElementById("audio-player");
+      audio.play();
+    }
+  </script>
+
+  <div class="container">
+	<div class="loader"></div>
+	<div class="loader"></div>
+	<div class="loader"></div>
+</div>
+
+</body>
+</html>
